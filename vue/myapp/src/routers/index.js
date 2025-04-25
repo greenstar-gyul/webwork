@@ -6,6 +6,7 @@ import TodoForm from '../views/TodoForm.vue'
 import EmpForm from '../views/EmpForm.vue'
 import MovieForm from '../views/MovieForm.vue'
 import ParamView from '../views/ParamView.vue'
+import EmpView from '../views/EmpView.vue'
 
 const routes = [
   { path: '/', component: HelloWorld },
@@ -14,6 +15,7 @@ const routes = [
   { path: '/emp', component: EmpForm },
   { path: '/movie', component: MovieForm },
   { path: '/param/:userName', component: ParamView },
+  { path: '/empView', component: EmpView }
 ]
 
 const router = createRouter({

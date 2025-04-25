@@ -58,6 +58,9 @@ export default {
             <li class="nav-item">
               <RouterLink class="nav-link" aria-current="page" to="/param/NO">(⩌v⩌)</RouterLink>
             </li>
+            <li class="nav-item">
+              <RouterLink class="nav-link" aria-current="page" to="/empView">empView</RouterLink>
+            </li>
           </ul>
         </div>
       </div>
