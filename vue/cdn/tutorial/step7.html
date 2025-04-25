@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step7.html</title>
+</head>
+<body>
+    <div id="app">
+        <form @submit.prevent="addTodo">
+            <input v-model="newTodo" required placeholder="new todo">
+            <button>할 일 추가</button>
+          </form>
+          <ul>
+            <li v-for="todo in todos" :key="todo.id">
+              {{ todo.text }}
+              <button @click="removeTodo(todo)">X</button>
+            </li>
+          </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+    let id = 0;
+    Vue.createApp({
+        data: function() {
+            return {
+                newTodo: '',
+                todos: [
+                    { id: id++, text: 'HTML 배우기' },
+                    { id: id++, text: 'JavaScript 배우기' },
+                    { id: id++, text: 'Vue 배우기' }
+                ]
+            };
+        },
+        methods: {
+            addTodo() {
+                this.todos.push({ id: id++, text: this.newTodo });
+                this.newTodo = ''
+            },
+            removeTodo(todo) {
+                this.todos = this.todos.filter((t) => t.id != todo.id);
+            }
+        }
+    }).mount('#app');
+    </script>
+</body>
+</html>

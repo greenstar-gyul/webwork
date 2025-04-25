@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for2.html</title>
+</head>
+<body>
+  <div id="app">
+    <table style="text-align: center; background-color: #ffffbb;">
+      <tr>
+        <th>idx</th>
+        <th>이름</th>
+        <th>부서</th>
+        <th>급여($)</th>
+      </tr>
+      <tr v-for="(e, i) in emp">
+        <td>{{i+1}}</td>
+        <td>{{e.firstName}}</td>
+        <td>{{e.dept}}</td>
+        <td>{{e.sal}}</td>
+    </table>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          emp: [
+            { firstName: 'A', dept: '개발', sal: 2000 },
+            { firstName: 'B', dept: '개발', sal: 2400 },
+            { firstName: 'C', dept: '개발', sal: 3700 },
+            { firstName: 'D', dept: '개발', sal: 4100 }
+          ]
+        }
+      }
+    }).mount("#app");
+  </script>
+</body>
+</html>

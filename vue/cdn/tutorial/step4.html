@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step3.html</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="increment">숫자 세기: {{ count }}</button>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+    Vue.createApp({
+        data: function() {
+            return {
+                count: 0
+            };
+        },
+        methods: {
+            increment() {
+                this.count++;
+            }
+        }
+    }).mount('#app');
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for.html</title>
+</head>
+<body>
+  <div id="app">
+    <ul :style>
+      <li v-for="({name, price}, index) in foods">{{index + 1 + ': '}} {{name }} {{price + ' 원'}}</li>
+    </ul>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          foods: [
+            { name: 'pizza', price: 21000 },
+            { name: 'noodle', price: 12000 }, 
+            { name: 'sushi', price: 18000 }, 
+            { name: 'ramen', price: 11000 }, 
+            { name: 'salad', price: 8000 }
+          ],
+          style: "list-style: none; padding: 0;"
+        }
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>

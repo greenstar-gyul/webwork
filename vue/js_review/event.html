@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input id="txt"><br>
+  <a href="https://www.naver.com/" id="goBtn">네이버로</a>
+  <div id="div">
+    <button type="button" id="btn">클릭</button>
+  </div>
+  <script>
+    goBtn.addEventListener('click', () => {
+      if (!confirm("네이버로 이동할까요?"))
+        event.preventDefault(); // 원래 기능을 막음
+      else
+        alert('네이버 이동');
+    })
+    div.addEventListener("click", () => { alert('div 클릭'); });
+    btn.addEventListener("click", () => { 
+      event.stopPropagation(); 
+      // alert('btn 클릭');
+      console.log(event.clientX, event.clientY);
+    });
+    txt.addEventListener('keypress', () => {
+      console.log(event.keyCode);
+      if (event.keyCode == 13) {
+        alert("입력완료");
+      }
+    })
+  </script>
+</body>
+</html>

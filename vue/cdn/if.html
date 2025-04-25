@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>if.html</title>
+</head>
+<body>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <div id="app">
+    <!--v-if 사이에는 다른 태그가 들어오면 안 됨-->
+    <div v-if="isVisible">v-if</div>
+    <div v-else>v-else</div>
+
+    <div v-if="score >= 90">
+      A 등급
+    </div>
+    <div v-else-if="score >= 80">
+      B 등급
+    </div>
+    <div v-else-if="score >= 70">
+      C 등급
+    </div>
+    <div v-else>
+      D 등급
+    </div>
+  </div>
+  <script>
+    Vue.createApp({
+      data() {
+        return {
+          isVisible: true,
+          score: 90
+        }
+      }
+    }).mount("#app");
+  </script>
+
+
+</body>
+</html>

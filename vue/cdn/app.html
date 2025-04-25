@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>app.html</title>
+</head>
+
+<body>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <!-- Container Element -->
+  <div id="app">
+    <span :id>{{ firstname }}</span><br>
+    <span v-html="lastname"></span><br>
+    <button :disabled="isButtonDisabled">버튼</button>
+    <div v-bind="objectOfAttrs">{{ objectOfAttrs }}</div>
+  </div>
+  
+  <script>
+    const { createApp } = Vue
+  
+    const vm = createApp({
+      data() {
+        return {
+          objectOfAttrs: {
+            id: 'container',
+            class: 'wrapper'
+          },
+          message: 'Hello Vue!',
+          id: 'username',
+          firstname: 'tom',
+          lastname: 'cat',
+          isButtonDisabled: false
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+
+</html>

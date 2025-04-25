@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step2.html</title>
+    <style>
+        .title {
+        color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1 :class="style">{{message}}</h1>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+    Vue.createApp({
+        data: function() {
+            return {
+                message: "나를 빨갛게 만들어 보세요",
+                style: "title"
+            };
+        },
+        methods: {
+        }
+    }).mount('#app');
+    </script>
+</body>
+</html>

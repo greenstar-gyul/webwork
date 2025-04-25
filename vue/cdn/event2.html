@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event2.html</title>
+</head>
+<body>
+  <div id="app">
+    <input type="text" @keypress.enter.prevent="keyPress" @keyup.alt.enter="altEnter">
+    <a href="https://www.naver.com/" @click.prevent="aClick">네이버</a>
+    <div @click.self="divClick">
+      <button @click.stop="btnClick">클릭</button>
+    </div>
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    Vue.createApp({
+      data: function() {
+        return {
+
+        }
+      },
+      methods: {
+        aClick() {
+          alert('a click');
+        },
+        altEnter() {
+          alert('alt Enter');
+        },
+        divClick() {
+          alert('div click');
+        },
+        btnClick() {
+          alert('btn click');
+        },
+        keyPress() {
+          alert('enter press');
+        }
+      }
+    }).mount('#app');
+  </script>
+</body>
+</html>

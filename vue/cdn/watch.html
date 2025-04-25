@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>watch.html</title>
+</head>
+<body>
+  <div id='app'>
+    이름: {{fullName}}
+  </div>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+  Vue.createApp({
+    data: function() {
+      return {
+        firstname: "길동",
+        lastname: "홍",
+        fullName: ""
+      }
+    },
+    methods: {
+
+    },
+    mounted() {},
+    computed: {
+    },
+    watch: {
+      firstname() {
+        this.fullName = this.firstname + this.lastname;
+      },
+      lastname() {
+        this.fullName = this.firstname + this.lastname;
+      }
+    }
+  }).mount('#app');
+  </script>
+</body>
+</html>

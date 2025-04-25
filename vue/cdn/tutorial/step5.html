@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input :v-model="text" @input="onInput" placeholder="여기에 입력하기">
+        <p>{{ text }}</p>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+    Vue.createApp({
+        data: function() {
+            return {
+                text: ""
+            };
+        },
+        methods: {
+            onInput(e) {
+                this.text = e.target.value
+            }
+        }
+    }).mount('#app');
+    </script>
+</body>
+</html>

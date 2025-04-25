@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step5.html</title>
+</head>
+<body>
+    <div id="app">
+        <button @click="toggle">토글 버튼</button>
+        <h1 v-if="awesome">Vue는 굉장해! 엄청나!</h1>
+        <h1 v-else>오 안돼 😢</h1>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+    Vue.createApp({
+        data: function() {
+            return {
+                awesome: true
+            };
+        },
+        methods: {
+            toggle() {
+                this.awesome = this.awesome ? false : true;
+            }
+        }
+    }).mount('#app');
+    </script>
+</body>
+</html>
