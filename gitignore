@@ -1,0 +1,30 @@
+# Logs
+vue/myapp/logs
+vue/myapp/*.log
+vue/myapp/npm-debug.log*
+vue/myapp/yarn-debug.log*
+vue/myapp/yarn-error.log*
+vue/myapp/pnpm-debug.log*
+vue/myapp/lerna-debug.log*
+
+vue/myapp/node_modules
+vue/myapp/.DS_Store
+vue/myapp/dist
+vue/myapp/dist-ssr
+vue/myapp/coverage
+vue/myapp/*.local
+
+/vue/myapp/cypress/videos/
+/vue/myapp/cypress/screenshots/
+
+# Editor directories and files
+vue/myapp/.vscode/*
+vue/myapp/!.vscode/extensions.json
+vue/myapp/.idea
+vue/myapp/*.suo
+vue/myapp/*.ntvs*
+vue/myapp/*.njsproj
+vue/myapp/*.sln
+vue/myapp/*.sw?
+
+vue/myapp/*.tsbuildinfo
