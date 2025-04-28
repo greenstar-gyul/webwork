@@ -39,8 +39,8 @@ export default {
     <button>Add Todo</button>
   </form>
   <ul>
-    <li v-for="todo in todos" :key="todo.id">
-      <TodoItem v-bind="todo"></TodoItem>
+    <li v-for="todo in filteredTodos" :key="todo.id">
+      <TodoItem :todo="todo" @remove-todo="removeTodo"></TodoItem>
     </li>
   </ul>
   <button @click="hideCompleted = !hideCompleted">
