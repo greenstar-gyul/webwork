@@ -1,0 +1,41 @@
+{
+  "dept": [
+    {
+      "id": "10",
+      "dname": "개발"
+    },
+    {
+      "id": "20",
+      "dname": "인사"
+    }
+  ],
+  "emp": [
+    {
+      "id": "1",
+      "first_name": "aa",
+      "last_name": "a",
+      "job_id": "sales",
+      "department_id": "20",
+      "salary": "1",
+      "email": "a"
+    },
+    {
+      "id": "2",
+      "first_name": "bb",
+      "last_name": "b",
+      "job_id": "sales",
+      "department_id": "20",
+      "salary": "1",
+      "email": "b"
+    },
+    {
+      "id": "3",
+      "first_name": "cc",
+      "last_name": "c",
+      "job_id": "sales",
+      "department_id": "20",
+      "salary": "1",
+      "email": "c"
+    }
+  ]
+}

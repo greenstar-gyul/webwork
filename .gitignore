@@ -1,30 +1,63 @@
+## 2router
 # Logs
-vue/myapp/logs
-vue/myapp/*.log
-vue/myapp/npm-debug.log*
-vue/myapp/yarn-debug.log*
-vue/myapp/yarn-error.log*
-vue/myapp/pnpm-debug.log*
-vue/myapp/lerna-debug.log*
+vue/2router/logs
+vue/2router/*.log
+vue/2router/npm-debug.log*
+vue/2router/yarn-debug.log*
+vue/2router/yarn-error.log*
+vue/2router/pnpm-debug.log*
+vue/2router/lerna-debug.log*
 
-vue/myapp/node_modules
-vue/myapp/.DS_Store
-vue/myapp/dist
-vue/myapp/dist-ssr
-vue/myapp/coverage
-vue/myapp/*.local
+vue/2router/node_modules
+vue/2router/.DS_Store
+vue/2router/dist
+vue/2router/dist-ssr
+vue/2router/coverage
+vue/2router/*.local
 
-/vue/myapp/cypress/videos/
-/vue/myapp/cypress/screenshots/
+/vue/2router/cypress/videos/
+/vue/2router/cypress/screenshots/
 
 # Editor directories and files
-vue/myapp/.vscode/*
-vue/myapp/!.vscode/extensions.json
-vue/myapp/.idea
-vue/myapp/*.suo
-vue/myapp/*.ntvs*
-vue/myapp/*.njsproj
-vue/myapp/*.sln
-vue/myapp/*.sw?
+vue/2router/.vscode/*
+vue/2router/!.vscode/extensions.json
+vue/2router/.idea
+vue/2router/*.suo
+vue/2router/*.ntvs*
+vue/2router/*.njsproj
+vue/2router/*.sln
+vue/2router/*.sw?
 
-vue/myapp/*.tsbuildinfo
+vue/2router/*.tsbuildinfo
+
+## 3component
+# Logs
+vue/3component/logs
+vue/3component/*.log
+vue/3component/npm-debug.log*
+vue/3component/yarn-debug.log*
+vue/3component/yarn-error.log*
+vue/3component/pnpm-debug.log*
+vue/3component/lerna-debug.log*
+
+vue/3component/node_modules
+vue/3component/.DS_Store
+vue/3component/dist
+vue/3component/dist-ssr
+vue/3component/coverage
+vue/3component/*.local
+
+/vue/3component/cypress/videos/
+/vue/3component/cypress/screenshots/
+
+# Editor directories and files
+vue/3component/.vscode/*
+vue/3component/!.vscode/extensions.json
+vue/3component/.idea
+vue/3component/*.suo
+vue/3component/*.ntvs*
+vue/3component/*.njsproj
+vue/3component/*.sln
+vue/3component/*.sw?
+
+vue/3component/*.tsbuildinfo
