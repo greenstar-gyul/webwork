@@ -7,17 +7,31 @@
 </head>
 <body>
   <div class="fruit">
-    <p>사과</p>
-    <p>바나나</p>
-    <p>오렌지</p>
+    <p data-price="300">사과</p>
+    <p data-price="700">바나나</p>
+    <p data-price="500">오렌지</p>
   </div>
   <script>
     const fruits = document.querySelectorAll(".fruit p");
-    fruits.forEach((e, idx) => {
-      console.log(idx + " " + e.innerHTML);
+    // fruits.forEach((e, idx) => {
+    //   console.log(idx + " " + e.innerHTML);
+    // })
+    let arr = Array.from(fruits).map( e => ({name: e.innerHTML, price: e.dataset['price']} ));
+    arr.sort((a, b) => {
+      if (a.price > b.price) return 1;
+      else if (a.price == b.price) return 0;
+      else return -1;
     })
-    let arr = Array.from(fruits).map( e => e.innerHTML );
     console.log(arr);
+
+    let findResult = arr.find(e => e.price > 200);
+    console.log(`findResult: ${findResult}`);
+    let filterResult = arr.filter(e => e.price > 300);
+    console.log(`filterResult: ${filterResult}`);
+
+    const months = ['jan', 'mar', 'apr', 'jun'];
+    months.splice(1, 0, 'feb');
+    console.log(months);
   </script>
 </body>
 </html>

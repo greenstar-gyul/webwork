@@ -1,3 +1,7 @@
+vue/js_review/node_modules
+
+node/node-project/node_modules
+
 ## 2router
 # Logs
 vue/2router/logs
@@ -61,3 +65,35 @@ vue/3component/*.sln
 vue/3component/*.sw?
 
 vue/3component/*.tsbuildinfo
+
+## frontapp
+# Logs
+project/frontapp/logs
+project/frontapp/*.log
+project/frontapp/npm-debug.log*
+project/frontapp/yarn-debug.log*
+project/frontapp/yarn-error.log*
+project/frontapp/pnpm-debug.log*
+project/frontapp/lerna-debug.log*
+
+project/frontapp/node_modules
+project/frontapp/.DS_Store
+project/frontapp/dist
+project/frontapp/dist-ssr
+project/frontapp/coverage
+project/frontapp/*.local
+
+/project/frontapp/cypress/videos/
+/project/frontapp/cypress/screenshots/
+
+# Editor directories and files
+project/frontapp/.vscode/*
+project/frontapp/!.vscode/extensions.json
+project/frontapp/.idea
+project/frontapp/*.suo
+project/frontapp/*.ntvs*
+project/frontapp/*.njsproj
+project/frontapp/*.sln
+project/frontapp/*.sw?
+
+project/frontapp/*.tsbuildinfo
