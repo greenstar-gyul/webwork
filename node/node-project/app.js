@@ -99,18 +99,39 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
+// 전체 조회
 app.get('/emp', (req, res) => {
   res.send(data)
 })
 
+// 단건 조회
+app.get('/emp/:id', (req, res) => {
+  let result = data.find(e => e.id == req.params.id);
+  res.send(result ? result : "not find");
+})
+
+// 부서번호 departmentId인 첫번째 사원 찾기
 app.get('/find', (req, res) => {
-  res.send(data.find(e => e.department_id == 10))
+  let id = req.query.departmentId;
+  res.send(data.find(e => e.department_id == id))
 })
 
+app.get('/find/:id', (req, res) => {
+  let id = req.params.id;
+  res.send(data.find(e => e.department_id == id))
+})
+
+// 직군 jobId인 사원 찾기
 app.get('/filter', (req, res) => {
-  res.send(data.filter(e => e.job_id == 'it'))
+  let id = req.query.jobId;
+  res.send(data.filter(e => e.job_id == id))
 })
 
+app.get('/filter/:jobId', (req, res) => {
+  res.send(data.filter(e => e.job_id == req.params.jobId))
+})
+
+// 이름으로 정렬하기
 app.get('/sort', (req, res) => {
   let tempData = [...data];
   res.send(tempData.sort((a, b) => {

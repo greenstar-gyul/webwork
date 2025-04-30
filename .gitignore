@@ -1,99 +1,29 @@
-vue/js_review/node_modules
+**/logs
+**/*.log
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/pnpm-debug.log*
+**/lerna-debug.log*
 
-node/node-project/node_modules
+**/node_modules
+**/.DS_Store
+**/dist
+**/dist-ssr
+**/coverage
+**/*.local
 
-## 2router
-# Logs
-vue/2router/logs
-vue/2router/*.log
-vue/2router/npm-debug.log*
-vue/2router/yarn-debug.log*
-vue/2router/yarn-error.log*
-vue/2router/pnpm-debug.log*
-vue/2router/lerna-debug.log*
-
-vue/2router/node_modules
-vue/2router/.DS_Store
-vue/2router/dist
-vue/2router/dist-ssr
-vue/2router/coverage
-vue/2router/*.local
-
-/vue/2router/cypress/videos/
-/vue/2router/cypress/screenshots/
+**/cypress/videos/
+**/cypress/screenshots/
 
 # Editor directories and files
-vue/2router/.vscode/*
-vue/2router/!.vscode/extensions.json
-vue/2router/.idea
-vue/2router/*.suo
-vue/2router/*.ntvs*
-vue/2router/*.njsproj
-vue/2router/*.sln
-vue/2router/*.sw?
+**/.vscode/*
+**/!.vscode/extensions.json
+**/.idea
+**/*.suo
+**/*.ntvs*
+**/*.njsproj
+**/*.sln
+**/*.sw?
 
-vue/2router/*.tsbuildinfo
-
-## 3component
-# Logs
-vue/3component/logs
-vue/3component/*.log
-vue/3component/npm-debug.log*
-vue/3component/yarn-debug.log*
-vue/3component/yarn-error.log*
-vue/3component/pnpm-debug.log*
-vue/3component/lerna-debug.log*
-
-vue/3component/node_modules
-vue/3component/.DS_Store
-vue/3component/dist
-vue/3component/dist-ssr
-vue/3component/coverage
-vue/3component/*.local
-
-/vue/3component/cypress/videos/
-/vue/3component/cypress/screenshots/
-
-# Editor directories and files
-vue/3component/.vscode/*
-vue/3component/!.vscode/extensions.json
-vue/3component/.idea
-vue/3component/*.suo
-vue/3component/*.ntvs*
-vue/3component/*.njsproj
-vue/3component/*.sln
-vue/3component/*.sw?
-
-vue/3component/*.tsbuildinfo
-
-## frontapp
-# Logs
-project/frontapp/logs
-project/frontapp/*.log
-project/frontapp/npm-debug.log*
-project/frontapp/yarn-debug.log*
-project/frontapp/yarn-error.log*
-project/frontapp/pnpm-debug.log*
-project/frontapp/lerna-debug.log*
-
-project/frontapp/node_modules
-project/frontapp/.DS_Store
-project/frontapp/dist
-project/frontapp/dist-ssr
-project/frontapp/coverage
-project/frontapp/*.local
-
-/project/frontapp/cypress/videos/
-/project/frontapp/cypress/screenshots/
-
-# Editor directories and files
-project/frontapp/.vscode/*
-project/frontapp/!.vscode/extensions.json
-project/frontapp/.idea
-project/frontapp/*.suo
-project/frontapp/*.ntvs*
-project/frontapp/*.njsproj
-project/frontapp/*.sln
-project/frontapp/*.sw?
-
-project/frontapp/*.tsbuildinfo
+**/*.tsbuildinfo
