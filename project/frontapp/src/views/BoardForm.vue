@@ -14,7 +14,7 @@
       <textarea id="content" style="height: 200px" v-model="board.content"></textarea>
 
       <label for="regdate">작성일자</label>
-      <input type="text" v-model="board.updated_date" readonly />
+      <input type="text" v-model="board.created_date" readonly />
 
       <button type="button" class="btn btn-xs btn-info" @click="saveBoard()">저장</button>
     </form>
@@ -36,7 +36,7 @@ export default {
     loadBoard() {
       axios.get(`board/${this.boardId}`)
       .then(response => {
-        this.board = response.data;
+        this.board = response.data[0];
       });
     },
     saveBoard() {

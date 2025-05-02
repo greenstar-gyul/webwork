@@ -43,7 +43,7 @@
             <td scope="col" class="text-center">{{ board.id }}</td>
             <th scope="col" class="text-center table-primary">작성일</th>
             <td scope="col" class="text-center">
-              {{ board.updated_date }}
+              {{ board.created_date }}
             </td>
             <th scope="col" class="text-center table-primary">이름</th>
             <td scope="col" class="text-center">{{ board.writer }}</td>
@@ -68,48 +68,34 @@
             </td>
           </tr>
         </tbody>
-        <tfoot>
-
-        </tfoot>
       </table>
     </div>
     <!-- 댓글 -->
     <div class="row">
-      <ul class="comment">
-        <li class="comment-list" v-for="comment in comments" :key="comment.id">
-          <div class="bubble">
-            <span class="comment-writer">{{ comment.writer }}</span><br>
-            <span class="comment-content">{{ comment.content }}</span><br>
-            <small class="comment-date">[{{ comment.updated_date }}]</small>
-          </div>
-        </li>
-      </ul>
+      <CommentComp :bid="boardId"></CommentComp>
     </div>
   </div>
 </template>
 <script>
+import CommentComp from '@/components/CommentComp.vue';
 import axios from 'axios';
 const url = "http://localhost:3000/"
 axios.defaults.baseURL = url;
 
 export default {
+  components: { CommentComp },
   data() {
     return {
       boardId: "",
-      board: {},
-      comments: {}
+      board: {}
     }
   },
   methods: {
     loadBoard() {
       axios.get(`board/${this.boardId}`)
         .then(response => {
-          this.board = response.data;
+          this.board = response.data[0];
         });
-    },
-    loadComment() {
-      axios.get(`comment`)
-        .then(response => this.comments = response.data.filter(t => t.bid == this.boardId));
     },
     updateBoard() {
       this.$router.push({ path: "/boardUpdate", query: { id: this.boardId } });
@@ -120,7 +106,6 @@ export default {
     // console.log("moundted, " + this.boardId);
     this.loadBoard();
     // console.log(this.board);
-    this.loadComment();
   }
 }
 </script>

@@ -123,8 +123,9 @@ app.route("/emp")
 .delete((req, res) => { res.send(req.body) });
 
 // Router로 모듈 분리
-app.use('/product', require('./routes/product'));
-app.use('/dept', require('./routes/dept'));
+app.use('/product', require('./routers/product'));
+app.use('/dept', require('./routers/dept'));
+app.use('/comment', require('./routers/comment'));
 
 app.listen(port, () => {
   console.log(`${url}에서 서버가 실행됨`);

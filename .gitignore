@@ -27,3 +27,4 @@
 **/*.sw?
 
 **/*.tsbuildinfo
+**/.env
