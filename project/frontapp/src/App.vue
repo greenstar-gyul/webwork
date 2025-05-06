@@ -7,13 +7,22 @@ import HelloWorld from './components/HelloWorld.vue'
   <header>
     <!-- <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" /> -->
 
-    <div class="wrapper">
+    <div class="container">
       <HelloWorld msg="frontapp" />
-
+      
       <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/board">Board</RouterLink>
+        <ul class="nav justify-content-center nav-pills">
+          <li class="nav-item">
+            <RouterLink to="/" class="nav-link" active-class="active">Home</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink to="/board" class="nav-link" active-class="active">게시물</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink to="/customer" class="nav-link" active-class="active">고객관리</RouterLink>
+          </li>
+        </ul>
+        <!-- <RouterLink to="/about">About</RouterLink> -->
       </nav>
     </div>
   </header>

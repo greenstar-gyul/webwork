@@ -13,6 +13,17 @@ router.get("/:bid", async (req, res) => {
   }
 });
 
+router.get("/count/:bid", async (req, res) => {
+  try {
+    const bid = req.params.bid;
+    const result = await query.commentQuery("selectCount", bid);
+    res.send(result);
+  }
+  catch(err) {
+    res.send(err);
+  }
+});
+
 router.post("", async (req, res) => { 
   try {
     const result = await query.commentQuery("insertComment", req.body);

@@ -32,6 +32,11 @@ const router = createRouter({
       name: 'boardUpdate',
       component: () => import('../views/BoardForm.vue'),
     },
+    {
+      path: '/customer',
+      name: 'customer',
+      component: () => import('../views/CustomerList.vue'),
+    },
   ],
 })
 

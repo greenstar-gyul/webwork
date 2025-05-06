@@ -3,6 +3,11 @@ const mysql = require("mysql2");
 const customersqllist = require('../mysql/customerSql');
 const boardsqllist = require('../mysql/boardSql');
 const commentsqllist = require('../mysql/commentSql');
+const QUERY_SQL_LIST = {
+  customer: customersqllist,
+  board: boardsqllist,
+  comment: boardsqllist
+}
 
 // mysql 접속 정보
 const conn = {
@@ -16,6 +21,17 @@ const conn = {
 };
 // DB 커넥션 풀 생성
 let pool = mysql.createPool(conn);
+
+const query = (table, sqlKey, data) => {
+  const sql = QUERY_SQL_LIST[table][sqlKey];
+  return new Promise((resolve, reject) => {pool.query(sql, data, (err, results) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(results);
+    })
+  })
+};
 
 const customerQuery = (sqlKey, data) => {
   const sql = customersqllist[sqlKey];
