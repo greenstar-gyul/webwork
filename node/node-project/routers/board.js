@@ -36,7 +36,7 @@ router.get("/:id", async (req, res) => {
 router.put("/:id", async (req, res) => { 
   const id = req.params.id;
   const board = req.body;
-  const data = [board.title, board.writer, board.content, board.created_date, id];
+  const data = [board.title, board.writer, board.content, id];
   try {
     const result = await query.boardQuery('updateBoard', data);
     res.send('업데이트 완료');

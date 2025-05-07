@@ -1,45 +1,57 @@
-<script>
+<script setup>
+import { ref, watch, onMounted } from 'vue';
 import axios from 'axios';
-const url = "/api/"
+import { useRoute } from 'vue-router'; // 필요시
+
+// props 정의
+const props = defineProps(['bid']);
+
+const url = "/api/";
 axios.defaults.baseURL = url;
 
-export default {
-  props: ['bid'],
-  data() {
-    return {
-      comments: [],
-      myComment: {
-        writer: "",
-        content: "",
-        bid: ""
-      }
-    };
-  },
-  methods: {
-    loadComm() {
-      axios.get(`comment/${this.bid}`)
-      .then(result => this.comments = result.data);
-    },
-    regiComm() {
-      // console.log(this.myComment);
-      axios.post(`comment`, this.myComment)
-      .then(() => this.loadComm())
-    },
-    delComm(id) {
-      // console.log("delete");
-      axios.delete(`comment/${id}`)
-      .then(() => this.loadComm())
-    }
-  },
-  watch: {
-    bid() {
-      this.myComment.bid = this.bid;
-      this.loadComm();
-    }
-  },
-  mounted() {
-  }
-}
+// 상태 정의
+const comments = ref([]);
+const myComment = ref({
+  writer: '',
+  content: '',
+  bid: props.bid
+});
+
+// 댓글 불러오기
+const loadComm = () => {
+  axios.get(`comment/${props.bid}`)
+    .then(result => {
+      comments.value = result.data;
+    });
+};
+
+// 댓글 등록
+const regiComm = () => {
+  axios.post('comment', myComment.value)
+    .then(() => {
+      loadComm();
+      myComment.value.writer = "";
+      myComment.value.content = "";
+  });
+};
+
+// 댓글 삭제
+const delComm = (id) => {
+  axios.delete(`comment/${id}`)
+    .then(() => loadComm());
+};
+
+// bid 변경 시 myComment.bid 업데이트 및 댓글 로드
+watch(() => props.bid, (newBid) => {
+  myComment.value.bid = newBid;
+  loadComm();
+});
+
+// 필요한 경우 mount 시 초기 로드
+onMounted(() => {
+  myComment.value.bid = props.bid;
+  loadComm();
+});
 </script>
 <template>
   <div class="row align-items-center mb-2">

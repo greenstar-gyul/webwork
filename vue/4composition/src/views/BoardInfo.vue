@@ -77,29 +77,42 @@
   </div>
 </template>
 <script setup>
+import { ref, onMounted, watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import CommentComp from '@/components/CommentComp.vue';
-import {ref} from 'vue';
-import {useRouter, useRoute} from 'vue-router';
 import axios from 'axios';
-const url = "/api/"
+
+const url = "/api/";
 axios.defaults.baseURL = url;
 
-const router = useRouter()
-const route = useRoute()
+const route = useRoute();
+const router = useRouter();
 
-const boardId = ref("");
+// 상태 정의
+const boardId = ref('');
 const board = ref({});
 
-function loadBoard() {
+// 게시글 불러오기
+const loadBoard = () => {
   axios.get(`board/${boardId.value}`)
     .then(response => {
       board.value = response.data[0];
     });
-}
-function updateBoard() {
+};
+
+// 게시글 수정 페이지로 이동
+const updateBoard = () => {
   router.push({ path: "/boardUpdate", query: { id: boardId.value } });
-}
-boardId.value = route.query.id;
-// console.log('boardId.value = '+ boardId.value);
-loadBoard();
+};
+
+watch(() => route.query.id, (newId) => {
+  boardId.value = newId;
+  loadBoard();
+});
+
+// 컴포넌트가 마운트되면 게시글 정보 가져오기
+onMounted(() => {
+  boardId.value = route.query.id;
+  loadBoard();
+});
 </script>
