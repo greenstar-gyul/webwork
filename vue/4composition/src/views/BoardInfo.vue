@@ -76,36 +76,30 @@
     </div>
   </div>
 </template>
-<script>
+<script setup>
 import CommentComp from '@/components/CommentComp.vue';
+import {ref} from 'vue';
+import {useRouter, useRoute} from 'vue-router';
 import axios from 'axios';
 const url = "/api/"
 axios.defaults.baseURL = url;
 
-export default {
-  components: { CommentComp },
-  data() {
-    return {
-      boardId: "",
-      board: {}
-    }
-  },
-  methods: {
-    loadBoard() {
-      axios.get(`board/${this.boardId}`)
-        .then(response => {
-          this.board = response.data[0];
-        });
-    },
-    updateBoard() {
-      this.$router.push({ path: "/boardUpdate", query: { id: this.boardId } });
-    }
-  },
-  mounted() {
-    this.boardId = this.$route.query.id;
-    // console.log("moundted, " + this.boardId);
-    this.loadBoard();
-    // console.log(this.board);
-  }
+const router = useRouter()
+const route = useRoute()
+
+const boardId = ref("");
+const board = ref({});
+
+function loadBoard() {
+  axios.get(`board/${boardId.value}`)
+    .then(response => {
+      board.value = response.data[0];
+    });
 }
+function updateBoard() {
+  router.push({ path: "/boardUpdate", query: { id: boardId.value } });
+}
+boardId.value = route.query.id;
+// console.log('boardId.value = '+ boardId.value);
+loadBoard();
 </script>

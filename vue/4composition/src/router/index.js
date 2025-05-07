@@ -10,42 +10,20 @@ const router = createRouter({
       component: HomeView,
     },
     {
-      path: '/about',
-      name: 'about',
+      path: '/board',
+      name: 'board',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue'),
-    },
-    {
-      path: '/board',
-      name: 'board',
       component: () => import('../views/BoardList.vue'),
-    },
-    {
-      path: '/boardTable',
-      name: 'boardTable',
-      component: () => import('../views/BoardTable.vue'),
     },
     {
       path: '/boardInfo',
       name: 'boardInfo',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
       component: () => import('../views/BoardInfo.vue'),
-    },
-    {
-      path: '/boardUpdate',
-      name: 'boardUpdate',
-      component: () => import('../views/BoardForm.vue'),
-    },
-    {
-      path: '/customer',
-      name: 'customer',
-      component: () => import('../views/CustomerList.vue'),
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: () => import('../views/LoginView.vue'),
     },
   ],
 })

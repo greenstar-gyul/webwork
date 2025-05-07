@@ -28,3 +28,4 @@
 
 **/*.tsbuildinfo
 **/.env
+**/sessions

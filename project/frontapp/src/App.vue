@@ -19,7 +19,13 @@ import HelloWorld from './components/HelloWorld.vue'
             <RouterLink to="/board" class="nav-link" active-class="active">게시물</RouterLink>
           </li>
           <li class="nav-item">
+            <RouterLink to="/boardTable" class="nav-link" active-class="active">게시물</RouterLink>
+          </li>
+          <li class="nav-item">
             <RouterLink to="/customer" class="nav-link" active-class="active">고객관리</RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink to="/login" class="nav-link" active-class="active">로그인</RouterLink>
           </li>
         </ul>
         <!-- <RouterLink to="/about">About</RouterLink> -->
