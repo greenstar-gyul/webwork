@@ -21,6 +21,8 @@ import HelloWorld from './components/HelloWorld.vue'
           <RouterLink to="/todo">todo</RouterLink>
           <RouterLink to="/slot">slot</RouterLink>
           <RouterLink to="/ProvideInject">ProvideInject</RouterLink>
+          <RouterLink to="/vuetify">vuetify</RouterLink>
+          <RouterLink to="/store">store</RouterLink>
         </nav>
       </div>
   </header>

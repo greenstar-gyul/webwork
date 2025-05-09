@@ -12,6 +12,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/component">컴포넌트</RouterLink>
         <RouterLink to="/provide">Provide</RouterLink>
         <RouterLink to="/watch">Watch</RouterLink>
+        <RouterLink to="/store">store</RouterLink>
       </nav>
     </div>
   </header>
